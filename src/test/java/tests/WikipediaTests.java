@@ -13,19 +13,6 @@ import static io.qameta.allure.Allure.step;
 public class WikipediaTests extends TestBase {
 
     @Test
-    void searchTest() {
-        step("Click on 'Skip'", () -> {
-            $(MobileBy.id("org.wikipedia.alpha:id/fragment_onboarding_skip_button")).click();
-        });
-        step("Type search", () -> {
-            $(MobileBy.AccessibilityId("Search Wikipedia")).click();
-            $(MobileBy.id("org.wikipedia.alpha:id/search_src_text")).setValue("BrowserStack");
-        });
-        step("Check search result", () ->
-                $$(byClassName("android.widget.TextView")).shouldHave(sizeGreaterThan(0)));
-    }
-
-    @Test
     void onboardingStepsTest() {
 
         step("Check that the text 'The Free Encyclopedia …in over 300 languages' is visible", () -> {
@@ -56,5 +43,18 @@ public class WikipediaTests extends TestBase {
             $(MobileBy.id("org.wikipedia.alpha:id/primaryTextView"))
                     .shouldHave(text("Send anonymous data"));
         });
+    }
+
+    @Test
+    void searchTest() {
+        step("Click on 'Skip'", () -> {
+            $(MobileBy.id("org.wikipedia.alpha:id/fragment_onboarding_skip_button")).click();
+        });
+        step("Type search", () -> {
+            $(MobileBy.AccessibilityId("Search Wikipedia")).click();
+            $(MobileBy.id("org.wikipedia.alpha:id/search_src_text")).setValue("BrowserStack");
+        });
+        step("Check search result", () ->
+                $$(byClassName("android.widget.TextView")).shouldHave(sizeGreaterThan(0)));
     }
 }
