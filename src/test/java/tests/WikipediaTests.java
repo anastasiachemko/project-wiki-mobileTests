@@ -4,6 +4,7 @@ import io.appium.java_client.MobileBy;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byClassName;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
@@ -22,5 +23,38 @@ public class WikipediaTests extends TestBase {
         });
         step("Check search result", () ->
                 $$(byClassName("android.widget.TextView")).shouldHave(sizeGreaterThan(0)));
+    }
+
+    @Test
+    void onboardingStepsTest() {
+
+        step("Check that the text 'The Free Encyclopedia …in over 300 languages' is visible", () -> {
+            $(MobileBy.id("org.wikipedia.alpha:id/primaryTextView"))
+                    .shouldHave(text("The Free Encyclopedia …in over 300 languages"));
+        });
+
+        step("Click on 'Сontinue'", () ->
+                $(MobileBy.id("org.wikipedia.alpha:id/fragment_onboarding_forward_button")).click());
+
+        step("Check that the text 'New ways to explore' is visible", () -> {
+            $(MobileBy.id("org.wikipedia.alpha:id/primaryTextView"))
+                    .shouldHave(text("New ways to explore"));
+        });
+
+        step("Click on 'Сontinue'", () ->
+                $(MobileBy.id("org.wikipedia.alpha:id/fragment_onboarding_forward_button")).click());
+
+        step("Check that the text 'Reading lists with sync' is visible", () -> {
+            $(MobileBy.id("org.wikipedia.alpha:id/primaryTextView"))
+                    .shouldHave(text("Reading lists with sync"));
+        });
+
+        step("Click on 'Сontinue'", () ->
+                $(MobileBy.id("org.wikipedia.alpha:id/fragment_onboarding_forward_button")).click());
+
+        step("Check that the text 'Send anonymous data' is visible", () -> {
+            $(MobileBy.id("org.wikipedia.alpha:id/primaryTextView"))
+                    .shouldHave(text("Send anonymous data"));
+        });
     }
 }
