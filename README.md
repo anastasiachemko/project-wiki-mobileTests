@@ -31,7 +31,7 @@ Click <a target="_blank" href="https://jenkins.autotests.cloud/job/10-anastasiac
 ## Allure report
 Allure Framework is a flexible test report tool that shows a concise representation of what have been tested in a neat web report form
 
-Here is the graphs:
+Here are the graphs:
 
 <p align="center">
 <img title="Allure overview" src="images/screens/graph.png">
