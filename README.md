@@ -21,7 +21,8 @@
 - Test on checking the work of the search bar 
 
 ## Jenkins job
-Jenkins is an automation server which lets us run tests.
+Jenkins is an automation server which lets us run tests
+
 Click <a target="_blank" href="https://jenkins.autotests.cloud/job/10-anastasiachemko-project-wildberries">here</a> to see the job for Wikipedia app.
 
 <p align="center">
@@ -30,6 +31,8 @@ Click <a target="_blank" href="https://jenkins.autotests.cloud/job/10-anastasiac
 
 ## Allure report
 Allure Framework is a flexible test report tool that shows a concise representation of what have been tested in a neat web report form
+
+Click <a target="_blank" href="https://jenkins.autotests.cloud/job/10-anastasiachemko-project-wikipedia-mobileTests/7/allure/">here</a> to see the report of the tests
 
 Here are the graphs:
 
